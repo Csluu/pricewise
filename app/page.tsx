@@ -1,11 +1,11 @@
 import HeroCarousel from "@/components/HeroCarousel";
 import Searchbar from "@/components/Searchbar";
 import Image from "next/image";
-// import { getAllProducts } from "@/lib/actions";
+import { getAllProducts } from "@/lib/actions";
 import ProductCard from "@/components/ProductCard";
 
 const Home = async () => {
-	// const allProducts = await getAllProducts();
+	const allProducts = await getAllProducts();
 
 	return (
 		<>
@@ -42,11 +42,12 @@ const Home = async () => {
 			<section className="trending-section">
 				<h2 className="section-text">Trending</h2>
 
-				{/* <div className="flex flex-wrap gap-x-8 gap-y-16">
+				{/* double check why I need the ? mark after allProducts again */}
+				<div className="flex flex-wrap gap-x-8 gap-y-16">
 					{allProducts?.map((product) => (
 						<ProductCard key={product._id} product={product} />
 					))}
-				</div> */}
+				</div>
 			</section>
 		</>
 	);
